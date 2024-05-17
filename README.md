@@ -1,2 +1,2 @@
 # Stellar-House
-Java, SpringBoot, React
+Java, SpringBoot
