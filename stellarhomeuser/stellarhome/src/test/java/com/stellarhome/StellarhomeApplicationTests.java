@@ -1,0 +1,13 @@
+package com.stellarhome;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class StellarhomeApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
