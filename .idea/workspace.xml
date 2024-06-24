@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f34a233-77cf-4397-a633-4973cdc304d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/stellarhome/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/model/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
     "Spring Boot.StellarhomeApplication (1).executor": "Run",
     "Spring Boot.StellarhomeApplication (2).executor": "Run",
     "Spring Boot.StellarhomeApplication.executor": "Run",
-    "git-widget-placeholder": "STH-0009",
+    "git-widget-placeholder": "STH-0012",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -114,7 +112,7 @@
       <workItem from="1718648542068" duration="471000" />
       <workItem from="1718649118533" duration="9942000" />
       <workItem from="1718739037102" duration="8522000" />
-      <workItem from="1719235674623" duration="5928000" />
+      <workItem from="1719235674623" duration="7719000" />
     </task>
     <servers />
   </component>
