@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f34a233-77cf-4397-a633-4973cdc304d0" name="Changes" comment="" />
+    <list default="true" id="0f34a233-77cf-4397-a633-4973cdc304d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/DTO/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/StellarhomeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/controller/RollController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/endPoints/IUserEndPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/model/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stellarhome/src/test/java/com/stellarhome/StellarhomeApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/src/test/java/com/stellarhome/StellarhomeApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,29 +52,30 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.StellarhomeApplication (1).executor": "Run",
-    "Spring Boot.StellarhomeApplication (2).executor": "Run",
-    "Spring Boot.StellarhomeApplication.executor": "Run",
-    "git-widget-placeholder": "STH-0009",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StellarhomeApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StellarhomeApplication (2).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StellarhomeApplication .executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StellarhomeApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;STH-0009&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }]]></component>
   <component name="RunDashboard">
@@ -72,9 +88,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="StellarhomeApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Stellar-House" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stellarhome" />
     <configuration name="StellarhomeApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="stellarhome" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.stellarhome.StellarhomeApplication" />
@@ -115,6 +128,9 @@
       <workItem from="1718739037102" duration="8522000" />
       <workItem from="1719235674623" duration="665000" />
       <workItem from="1719430615905" duration="1041000" />
+      <workItem from="1719433334809" duration="1034000" />
+      <workItem from="1719435587287" duration="47000" />
+      <workItem from="1719435678889" duration="349000" />
     </task>
     <servers />
   </component>
