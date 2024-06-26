@@ -8,6 +8,7 @@ public class StellarhomeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StellarhomeApplication.class, args);
+		System.out.println("aqui mmmm");
 	}
 
 }

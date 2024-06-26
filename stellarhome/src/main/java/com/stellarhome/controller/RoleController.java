@@ -1,4 +1,4 @@
 package com.stellarhome.controller;
 
-public class UserController {
+public class RoleController {
 }
