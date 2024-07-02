@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IUserRepository extends CrudRepository<UserEntity, Integer> {
-    // queris busquedas espesificas
+    // querys busquedas espesificas
 }
