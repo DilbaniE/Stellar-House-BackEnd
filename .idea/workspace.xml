@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f34a233-77cf-4397-a633-4973cdc304d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/DTO/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/StellarhomeApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/controller/RollController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/endPoints/IUserEndPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/java/com/stellarhome/model/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stellarhome/src/test/java/com/stellarhome/StellarhomeApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/stellarhome/src/test/java/com/stellarhome/StellarhomeApplicationTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="0f34a233-77cf-4397-a633-4973cdc304d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
