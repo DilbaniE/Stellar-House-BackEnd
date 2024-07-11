@@ -1,4 +1,5 @@
 package com.stellarhome.model;
+import com.stellarhome.model.RoleEntity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

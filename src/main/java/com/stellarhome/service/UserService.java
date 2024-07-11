@@ -3,6 +3,8 @@ package com.stellarhome.service;
 import com.stellarhome.model.UserEntity;
 import com.stellarhome.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
@@ -15,59 +17,78 @@ public class UserService {
     @Autowired
     private IUserRepository iUserRepository;
 
-    public List<UserEntity> getAll(){
-        return iUserRepository.findAll();
+    public ResponseEntity< List<UserEntity>> getAllUsers(){
+        List<UserEntity> users = iUserRepository.findAll();
+        return ResponseEntity.ok(users);
     }
 
-    public UserEntity getById(Integer id){
-        return iUserRepository.findById(id).orElse(null);
-    }
+    public ResponseEntity<UserEntity> getUserByDni(String dni, String kDni) {
+        Optional<UserEntity> optionalUser = iUserRepository.findByDniAndKDni(dni, kDni);
+        return optionalUser
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity
+                        .notFound()
+                        .build())
+        ;
 
-    public UserEntity saveUser(UserEntity userEntity){
-        return iUserRepository.save(userEntity);
     }
-
-    public UserEntity updateUser(Integer id, UserEntity userEntity){
-        if(iUserRepository.existsById(id)){
-            userEntity.setId(id);
-            return iUserRepository.save(userEntity);
+    public ResponseEntity<?> saveUser(UserEntity userEntity){
+        Optional<UserEntity> existingUser = iUserRepository.findByDniAndKDni(userEntity.getDni(), userEntity.getKDni());
+        if(existingUser.isPresent()){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("user exists");
+        }else{
+            UserEntity userSave = iUserRepository.save(userEntity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(userSave);
         }
-        return null;
+
     }
 
-    public UserEntity patchUser(Integer id, Map<String, Object> fields){
-        Optional<UserEntity> optionalUser = iUserRepository.findById(id);
+    public ResponseEntity<UserEntity> updateUser(String dni, String kDni, UserEntity userEntity){
+        Optional<UserEntity> userExisting = iUserRepository.findByDniAndKDni(dni,kDni);
+        if(userExisting.isPresent()){
+            UserEntity userToUpdate = userExisting.get();
+            userToUpdate.setName(userEntity.getName());
+            userToUpdate.setLastName(userEntity.getLastName());
+            userToUpdate.setEmail(userEntity.getEmail());
+            userToUpdate.setPassword(userEntity.getPassword());
+            userToUpdate.setAddress(userEntity.getAddress());
+            userToUpdate.setPhone(userEntity.getPhone());
+            UserEntity updatedUser = iUserRepository.save(userToUpdate);
+            return ResponseEntity.ok(updatedUser);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+    }
+
+    public UserEntity patchUser(String dni, String kDni, Map<String, Object> fields){
+        Optional<UserEntity> optionalUser = iUserRepository.findByDniAndKDni(dni, kDni);
         if(optionalUser.isPresent()){
             UserEntity userEntity = optionalUser.get();
-            fields.forEach((key, value) ->{
-                switch (key){
-                    case "name":
-                        userEntity.setName((String) value);
-                        break;
-                    case "lastName":
-                        userEntity.setLastName((String) value);
-                        break;
-                    case "email":
-                        userEntity.setEmail((String) value);
-                        break;
-                    case "password":
-                        userEntity.setPassword((String) value);
-                        break;
-                    case "address":
-                        userEntity.setAddress((String) value);
-                        break;
-                    case "phone":
-                        userEntity.setPhone((String) value);
-                        break;
-                    default:
-                        break;
-                }
-            });
+            if (fields.containsKey("name")) {
+                userEntity.setName((String) fields.get("name"));
+            }
+            if (fields.containsKey("lastName")) {
+                userEntity.setLastName((String) fields.get("lastName"));
+            }
+            if (fields.containsKey("email")) {
+                userEntity.setEmail((String) fields.get("email"));
+            }
+            if (fields.containsKey("password")) {
+                userEntity.setPassword((String) fields.get("password"));
+            }
+            if (fields.containsKey("address")) {
+                userEntity.setAddress((String) fields.get("address"));
+            }
+            if (fields.containsKey("phone")) {
+                userEntity.setPhone((String) fields.get("phone"));
+            }
+
             return iUserRepository.save(userEntity);
         }
         return null;
+        }
+
     }
-    public void deleteUser(Integer id){
-        iUserRepository.deleteById(id);
-    }
+
 }
