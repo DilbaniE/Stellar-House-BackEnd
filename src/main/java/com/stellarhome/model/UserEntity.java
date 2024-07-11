@@ -25,15 +25,17 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "last_name", nullable = false)
     private String lastName;
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
-    @Column(nullable = false, unique = true,  length = 150)
+    @Column(name = "password", nullable = false, unique = true,  length = 150)
     private String password;
+    @Column(name = "addres", nullable = false)
     private String address;
+    @Column(name = "phone", nullable = false)
     private String phone;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", referencedColumnName = "id")
