@@ -21,13 +21,16 @@ public class UserController {
 
     @Autowired
     private UserService service;
+
     @GetMapping("/")
     public ResponseEntity<List<UserEntity>> getAllUsers(){
         return service.getAllUsers();
     }
+
     @GetMapping("/{dni}/{kDni}")
     public ResponseEntity<UserEntity> getUserByDni(@PathVariable String dni, @PathVariable String kDni){
-        return service.getUserByDni(dni, kDni);
+       // return service.getUserByDni(dni, kDni);
+        return null<
     }
     @PostMapping("/")
     public ResponseEntity<?> createUser(@RequestBody UserEntity userEntity){
