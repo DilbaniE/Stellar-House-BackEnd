@@ -24,11 +24,11 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<UserEntity>> getAllUsers(){
         return service.getAllUsers()
         .map(ResponseEntity::ok)
-        .orElseGet(() -> ResponseEntity.noContent().build());
+        .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/{dni}/{kDni}")

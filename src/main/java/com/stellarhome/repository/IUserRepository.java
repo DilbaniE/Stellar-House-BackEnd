@@ -8,5 +8,5 @@ import java.util.Optional;
 @Repository
 public interface IUserRepository extends JpaRepository<UserEntity, Integer> {
     // querys busquedas espesificas
-    //Optional<UserEntity> findByDniAndKDni(String dni, String kDni);
+    Optional<UserEntity> findByDniAndKDni(String dni, String kDni);
 }

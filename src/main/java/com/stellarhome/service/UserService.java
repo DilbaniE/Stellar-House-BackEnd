@@ -21,12 +21,11 @@ public class UserService {
     }
 
     public Optional<UserEntity> getUserByDni(String dni, String kDni) {
-        return Optional.of(UserEntity.builder().build());
-        //return iUserRepository.findByDniAndKDni(dni, kDni);
+        return iUserRepository.findByDniAndKDni(dni, kDni);
     }
 
     public Optional<UserEntity> createUser(UserEntity userEntity){
-        Optional<UserEntity> existingUser = Optional.of(UserEntity.builder().build());//iUserRepository.findByDniAndKDni(userEntity.getDni(), userEntity.getKDni());
+        Optional<UserEntity> existingUser = iUserRepository.findByDniAndKDni(userEntity.getDni(), userEntity.getKDni());
         if(existingUser.isPresent()){
             return Optional.empty();
         }else{
@@ -37,7 +36,7 @@ public class UserService {
     }
 
     public Optional<UserEntity> updateUser(String dni, String kDni, UserEntity userEntity){
-        Optional<UserEntity> userExisting = Optional.of(UserEntity.builder().build());//iUserRepository.findByDniAndKDni(dni,kDni);
+        Optional<UserEntity> userExisting = iUserRepository.findByDniAndKDni(dni,kDni);
         if(userExisting.isPresent()){
             UserEntity userToUpdate = userExisting.get();
             userToUpdate.setName(userEntity.getName());
@@ -55,7 +54,7 @@ public class UserService {
     }
 
     public Optional<UserEntity> patchUser(String dni, String kDni, Map<String, Object> fields) {
-        Optional<UserEntity> optionalUser = Optional.of(UserEntity.builder().build());//iUserRepository.findByDniAndKDni(dni, kDni);
+        Optional<UserEntity> optionalUser = iUserRepository.findByDniAndKDni(dni, kDni);
         if (optionalUser.isPresent()) {
             UserEntity userEntity = optionalUser.get();
             if (fields.containsKey("name")) {
