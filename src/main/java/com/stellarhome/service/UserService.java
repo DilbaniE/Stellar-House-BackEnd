@@ -3,8 +3,6 @@ package com.stellarhome.service;
 import com.stellarhome.model.UserEntity;
 import com.stellarhome.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
@@ -17,33 +15,27 @@ public class UserService {
     @Autowired
     private IUserRepository iUserRepository;
 
-    public ResponseEntity< List<UserEntity>> getAllUsers(){
+    public Optional< List<UserEntity>> getAllUsers(){
         List<UserEntity> users = iUserRepository.findAll();
-        return ResponseEntity.ok(users);
+        return users.isEmpty() ? Optional.empty() : Optional.of(users);
     }
 
-    public ResponseEntity<UserEntity> getUserByDni(String dni, String kDni) {
-        Optional<UserEntity> optionalUser = iUserRepository.findByDniAndKDni(dni, kDni);
-        return optionalUser
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity
-                        .notFound()
-                        .build())
-        ;
-
+    public Optional<UserEntity> getUserByDni(String dni, String kDni) {
+        return iUserRepository.findByDniAndKDni(dni, kDni);
     }
-    public ResponseEntity<?> saveUser(UserEntity userEntity){
+
+    public Optional<UserEntity> createUser(UserEntity userEntity){
         Optional<UserEntity> existingUser = iUserRepository.findByDniAndKDni(userEntity.getDni(), userEntity.getKDni());
         if(existingUser.isPresent()){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("user exists");
+            return Optional.empty();
         }else{
             UserEntity userSave = iUserRepository.save(userEntity);
-            return ResponseEntity.status(HttpStatus.CREATED).body(userSave);
+            return Optional.of(userSave);
         }
 
     }
 
-    public ResponseEntity<UserEntity> updateUser(String dni, String kDni, UserEntity userEntity){
+    public Optional<UserEntity> updateUser(String dni, String kDni, UserEntity userEntity){
         Optional<UserEntity> userExisting = iUserRepository.findByDniAndKDni(dni,kDni);
         if(userExisting.isPresent()){
             UserEntity userToUpdate = userExisting.get();
@@ -54,16 +46,16 @@ public class UserService {
             userToUpdate.setAddress(userEntity.getAddress());
             userToUpdate.setPhone(userEntity.getPhone());
             UserEntity updatedUser = iUserRepository.save(userToUpdate);
-            return ResponseEntity.ok(updatedUser);
+            return Optional.of(updatedUser);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return Optional.empty();
         }
 
     }
 
-    public UserEntity patchUser(String dni, String kDni, Map<String, Object> fields){
+    public Optional<UserEntity> patchUser(String dni, String kDni, Map<String, Object> fields) {
         Optional<UserEntity> optionalUser = iUserRepository.findByDniAndKDni(dni, kDni);
-        if(optionalUser.isPresent()){
+        if (optionalUser.isPresent()) {
             UserEntity userEntity = optionalUser.get();
             if (fields.containsKey("name")) {
                 userEntity.setName((String) fields.get("name"));
@@ -84,10 +76,10 @@ public class UserService {
                 userEntity.setPhone((String) fields.get("phone"));
             }
 
-            return iUserRepository.save(userEntity);
+            UserEntity updatedUser = iUserRepository.save(userEntity);
+            return Optional.of(updatedUser);
         }
-        return null;
+        return Optional.empty();
     }
-
 }
 
