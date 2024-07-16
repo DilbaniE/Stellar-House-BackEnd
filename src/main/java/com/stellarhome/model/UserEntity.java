@@ -27,10 +27,6 @@ public class UserEntity {
     private Integer id;
     @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "dni", nullable = false)
-    private String dni;
-    @Column(name = "kDni", nullable = false)
-    private String kDni;
     @Column(name = "last_name", nullable = false)
     private String lastName;
     @Column(name = "email", nullable = false, unique = true)
